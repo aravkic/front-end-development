@@ -22,23 +22,20 @@
         color: blue;
     }
 
-    #first-div p:nth-child(2)::after{
+    #first-div > p:first-of-type::after{
 
         content: " - NEW";
         color: yellow;
     }
-    #first-div p:nth-child(3)::after{
+    #first-div > p:nth-child(3)::after{
 
         content: " - NEW";
         color: yellow;
     }
    
-
-    p:last-child:hover{
+    body > p:last-child:hover{
         font-style: italic;
     }
-
-
 
     </style>
 </head>
