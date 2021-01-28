@@ -1,61 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
+    <title>Animation</title>
     <style>
-
-    a[href^="https://www.google.com"] { 
-    color: green;
-     }
-    
-    a[target="_blank"] {
-    color: red;
+    body{
+        background:#050210;  
     }
+    .circle {
+  background-image:linear-gradient(#fb5dad,#55fb9f, #b97aff);
+  padding:10px;
+  width:250px;
+  height:250px;
+  border-style: solid;
+  border-color:transparent;
+  border-radius: 50%;
+  border-width:20px;
+  animation:rot 1s linear infinite; 
+  padding:1px;
+  /*box-shadow: 0px 0px 40px 20px #fb5dad, 0px 0px 40px 20px #55fb9f, 0px 0px 40px 20px #b97aff;*/
+  max-width: 500px;
+  margin: auto; 
+}
+.circle > div {
+  background:rgb(8, 8, 32);
+  height: 249px;
+  width: 249px;
+  border-style: solid;
+  border-color:transparent;
+   border-radius: 50%;
+  border-width:1px;
+  
+}
 
-    #second-div p:nth-child(even){
-        color: red;
-    }
+.inner {
+background: #050210;
+height: 249px;
+width: 249px;
+border-style: solid;
+border-color:transparent;
+border-radius: 50%;
+border-width:1px;
+animation:circle1 1s infinite;
+margin: auto; 
 
-    #second-div p:nth-child(odd){
-        color: blue;
-    }
+}
 
-    #first-div > p::after{
+@keyframes rot {
+   0%
+  {
+    transform:rotate(0deg);
+    box-shadow: 0px 0px 40px 20px #fb5dad;
+  }
+   25%
+  {
+    transform:rotate(90deg);
+    box-shadow: 0px 0px 40px 20px #55fb9f;
+  }
+  50%
+  {
+    transform:rotate(180deg);
+    box-shadow: 0px 0px 40px 20px #b97aff;
+  }
+   75%
+  {
+    transform:rotate(270deg);
+    box-shadow: 0px 0px 40px 20px #fb5dad;
+  }
+  100% {
+    transform:rotate(360deg);
+    box-shadow: 0px 0px 40px 20px #55fb9f;
+  }
+} 
 
-        content: " - NEW";
-        color: yellow;
-    }
+@keyframes circle1 {
+   0%
+  {
+    height: 0px;
+  width: 0px;
+  }
+   25%
+  {
+    height: 180px;
+  width: 180px;
+  }
+  50%
+  {
+    height: 200px;
+  width: 200px;
+  }
+   75%
+  {
+    height: 230px;
+  width: 230px;
+  }
+  100% {
+    height: 249px;
+  width: 249px;
+  }
+} 
 
-    body > p:last-child:hover{
-        font-style: italic;
-    }
+
 
     </style>
+
+
 </head>
 
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
+    <div class="circle">
+        <div>
+          <div class="inner"></div>
         </div>
-    </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
+        
+      </div>
+      
 </body>
-
 </html>
